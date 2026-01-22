@@ -134,14 +134,26 @@ break를 사용하여 루프를 탈출하시오.
 //        Scanner sc = new Scanner(System.in);
 //
 //        while (true) {
-//            count++;
-//            System.out.print(count + "회 입력 : ");
+//
+//            System.out.print((count+1) + "회 입력 : ");
 //            String str = sc.nextLine();
 //            if (str.equals("end")) {
 //                break;
-//            }
+//            } count++;
 //        }
 //        System.out.println("[안내] 프로그램을 종료 합니다.[총 " + count + "회 입력]");
+
+
+//        int count = 0;
+//        for (; ; ) {
+//            Scanner sc = new Scanner(System.in);
+//            System.out.printf((count+1) + "입력 : ");
+//            String str = sc.nextLine();
+//            if (str.equals("end")) {
+//                break;
+//            } count++;
+//        }
+//        System.out.println("count = " + count);
 
 
 
@@ -284,5 +296,5 @@ Scanner로 메뉴 번호를 입력받습니다.
 //        }
 
 
+        }
     }
-}
