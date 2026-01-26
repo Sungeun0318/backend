@@ -275,26 +275,40 @@ Scanner로 메뉴 번호를 입력받습니다.
 //            if (num == 1) {
 //                System.out.print("입금액> ");
 //                balance += sc.nextInt();
-//            }
-//            else if (num == 2) {
+//            } else if (num == 2) {
 //                System.out.print("출금액> ");
 //                int money = sc.nextInt();
-//                if (balance < money) {
+//                if (balance <= money) {
+//                    balance -= money;
 //                    System.out.println("잔고가 부족.");
 //                }
-//                else {
-//                    balance -= money;
-//                }
-//            }
-//            else if (num == 3) {
+//
+//            } else if (num == 3) {
 //                System.out.println("잔고> " + balance);
-//            }
-//            else if (num == 4) {
+//            } else if (num == 4) {
 //                System.out.println("프로그램을 종료.");
 //                break;
 //            }
 //        }
 
+        // [1] 화면 설계 : 내가 만들고자 하는 청사진(피그마)
+//            System.out.println("---------------------------------");
+//            System.out.println("1:입금 | 2:출금 | 3:잔고 | 4:종료");
+//            System.out.println("---------------------------------");
+//            System.out.print("선택> ");
+//            System.out.print("입금액> ");
+//             . . . // 반복
+        // [2] 데이터 설계 : 그 화면에서 필요한 데이터/저장! (엑셀/표)
+        // 기능 모든 화면에서 공용/누적 사용하는 저장 값 = 잔고
 
-        }
+        // [3] 기능 설계 : 그 화면에서 버튼/이벤트 했을 때 무엇을
+        // 1. 선택시 : 입력받은 값을 잔고에 +=
+        // 2. 선택시 : 입력받은 값을 잔고에 -=, 단 if 사용해서 조건확인 : 입력받은값 >= 잔고
+        // 3. 선택시 : 잔고 출력
+        // 4. 선택시 : 프로그램/무한루프 종료
+
+        // [4] 구현
+
+
     }
+}
