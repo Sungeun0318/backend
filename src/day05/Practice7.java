@@ -1,6 +1,7 @@
 package day05;
 
 import java.awt.*;
+import java.util.Scanner;
 
 public class Practice7 {
     public static void main(String[] args) {
@@ -106,11 +107,27 @@ public class Practice7 {
         menuItem3.price4 = 3000;
         menuItem3.isSignature = false;
 
-        if (menuItem1.isSignature == true && menuItem2.isSignature == true && menuItem3.isSignature == true) {
-            System.out.println();
-
+        if (menuItem1.isSignature == true) {
+            System.out.println(menuItem1.name4 + " " + menuItem1.price4);
+        } else  if (menuItem2.isSignature == true) {
+            System.out.println(menuItem2.name4 + " " + menuItem2.price4);
+        } else  if (menuItem3.isSignature == true) {
+            System.out.println(menuItem3.name4 + " " + menuItem3.price4);
         }
 
+        // 10
+        UserProfile userProfile = new UserProfile();
+        Scanner sc = new Scanner(System.in);
+        System.out.print("이름을 입력하세요 : ");
+        String username = sc.nextLine();
+        System.out.print("나이를 입력하세요 : ");
+        int userage = sc.nextInt();
+        System.out.print("MBTI 입력하세요 : ");
+        String usermbti = sc.next();
+        userProfile.name5 = username;
+        userProfile.age5 = userage;
+        userProfile.mbti = usermbti;
+        System.out.println(userProfile.name5 + " " + userProfile.age5 + " " + userProfile.mbti);
     }
 }
 
