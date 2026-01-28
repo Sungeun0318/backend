@@ -25,5 +25,14 @@ public class Exam2 {
 
         a.메소드(); // ok
         // a.비공개메소드(); // error
+
+
+        // [5] import : 다른 패키지의 클래스 호출
+        // 자동완성시 자동으로 최상단에 import day07.package1.A;
+        // -> day07 폴더내 package1 폴더내 'A' 클래스 가져온다.
+        // import java.util.Scanner;
+        // -> java 폴더내 util폴더내 'Scanner' 클래스 가져온다.
+        //  * java.lang 패키지는 import 생략한다.<자동>
+
     } // m end
 } // c end
