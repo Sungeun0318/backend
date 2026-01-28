@@ -17,7 +17,6 @@ public class Exam3 {
         // day07.User@5f184fc6 -> toString오버라이드 -> User{age=0, name='유재석'}
         System.out.println(user); // User{age=0, name='유재석'}
 
-
     }
 }
 
