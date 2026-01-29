@@ -105,6 +105,10 @@ public class Practice10 {
     }
 }
 
+
+
+
+
 class Member {
     private String id;
     public String getId() {
