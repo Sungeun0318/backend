@@ -40,4 +40,3 @@ public class ProductDto {
     public int getUserNo() {return userNo;}
     public void setUserNo(int userNo) {this.userNo = userNo;}
 }
-

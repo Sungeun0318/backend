@@ -14,7 +14,6 @@ public class BuyDto {
     public BuyDto(int BuyNumNo, int productNo) {
         this.BuyNumNo = BuyNumNo;
         this.productNo = productNo;
-        this.userNo = userNo;
     }
 
     public int getBuyNumNo() {

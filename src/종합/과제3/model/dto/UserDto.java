@@ -7,7 +7,9 @@ public class UserDto {
     private String nickname;
     private String phone;
 
-    public UserDto(){}
+    public UserDto() {
+    }
+
     public UserDto(int userNo, String id, String pw, String nickname, String phone) {
         this.userNo = userNo;
         this.id = id;
@@ -15,8 +17,6 @@ public class UserDto {
         this.nickname = nickname;
         this.phone = phone;
     }
-
-
 
     public int getUserNo() {
         return userNo;

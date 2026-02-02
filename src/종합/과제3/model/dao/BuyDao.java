@@ -12,17 +12,25 @@ public class BuyDao {
         return instance;
     }
     private final ArrayList<BuyDto> buyList = new ArrayList<BuyDto>();
-
     private static int currentBuyNo = 1;
+
 
 
     public boolean BuyProduct(int productNo){
         BuyDto buyDto = new BuyDto(currentBuyNo++, productNo, MemberController.getInstance().getCurrentUserNo());
-
         boolean result = buyList.add(buyDto);
         return result;
     }
-
-
-
+    public  ArrayList<BuyDto> getBuyList(){
+        return buyList;
+    }
+    public int getBuyCount(int productNo){
+        int count = 0;
+        for(BuyDto buy : buyList){
+            if(buy.getProductNo() == productNo){
+                count++;
+            }
+        }
+        return count;
+    }
 }

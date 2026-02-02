@@ -1,6 +1,8 @@
 package 종합.과제3.controller;
-
 import 종합.과제3.model.dao.UserDao;
+import 종합.과제3.model.dto.UserDto;
+
+import java.util.ArrayList;
 
 public class MemberController {
     private MemberController(){}
@@ -8,8 +10,6 @@ public class MemberController {
     public static MemberController getInstance(){
         return instance;
     }
-
-    private UserDao UD = UserDao.getInstance();
 
     private int currentUserNo = 0;
 
@@ -21,7 +21,12 @@ public class MemberController {
         this.currentUserNo = currentUserNo;
     }
 
+    private UserDao UD = UserDao.getInstance();
 
+    public boolean singin(String id, String pw, String nickname, String phone){
+        boolean result = UD.singin(id,pw,nickname,phone);
+        return result;
+    }
     public boolean login(String id, String pw){
         int result =  UD.login(id,pw);
         if (result >0){
@@ -30,11 +35,30 @@ public class MemberController {
         }
         return false;
     }
-
-    public boolean singin(String id, String pw, String nickname, String phone){
-        boolean result = UD.singin(id,pw,nickname,phone);
-        return result;
+    public boolean logout(){
+        MemberController.getInstance().setCurrentUserNo(0);
+        return true;
     }
 
+    public String returnNickname(String id){
+        String nickname = "";
+        ArrayList<UserDto> userList = UD.userListGet();
+        for (UserDto user : userList) {
+            if (currentUserNo == user.getUserNo()) {
+                nickname = user.getNickname();
+            }
+        }
+        return nickname;
+    }
 
+    public String returnSeller(int UserNO){
+        String seller ="";
+        ArrayList<UserDto> userList = UD.userListGet();
+        for (UserDto user : userList){
+            if (UserNO == user.getUserNo()){
+                seller = user.getNickname();
+            }
+        }
+        return seller;
+    }
 }
