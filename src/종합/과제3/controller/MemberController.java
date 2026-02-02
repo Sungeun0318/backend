@@ -24,8 +24,7 @@ public class MemberController {
     private UserDao UD = UserDao.getInstance();
 
     public boolean singin(String id, String pw, String nickname, String phone){
-        boolean result = UD.singin(id,pw,nickname,phone);
-        return result;
+        return UD.singin(id,pw,nickname,phone);
     }
     public boolean login(String id, String pw){
         int result =  UD.login(id,pw);
@@ -40,7 +39,7 @@ public class MemberController {
         return true;
     }
 
-    public String returnNickname(String id){
+    public String returnNickname(){
         String nickname = "";
         ArrayList<UserDto> userList = UD.userListGet();
         for (UserDto user : userList) {

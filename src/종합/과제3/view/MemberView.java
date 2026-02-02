@@ -41,7 +41,7 @@ public class MemberView {
         System.out.print("비밀번호: "); String pw = scan.nextLine();
         boolean result = MC.login(id,pw);
         if (result){
-            System.out.printf("[안내] %s님 환영합니다\n", MC.returnNickname(id));
+            System.out.printf("[안내] %s님 환영합니다\n", MC.returnNickname());
             PV.indexView();
         }else {System.out.println("로그인 실패");}
 
