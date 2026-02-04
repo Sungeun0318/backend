@@ -74,14 +74,14 @@ select * from orders;
 -- price (단가): int unsigned, NULL 허용 안함
 
 create table order_items(
-item_id int auto_increment,
-order_id bigint,
-product_id int,
-quantity int default 1,
-price int unsigned not null,
-constraint primary key(item_id),
-constraint foreign key(order_id) references orders(order_id),
-constraint foreign key(product_id) references products(product_id)
+    item_id int auto_increment,
+    order_id bigint,
+    product_id int,
+    quantity int default 1,
+    price int unsigned not null,
+    constraint primary key (item_id),
+    constraint foreign key (order_id) references orders (order_id),
+    constraint foreign key (product_id) references products (product_id)
 );
 select * from order_items;
 
@@ -97,12 +97,12 @@ select * from order_items;
 -- enrolled_date (입학일): date
 
 create table students(
-student_id varchar(10) not null auto_increment,
-student_name varchar(30) not null,
-major varchar(50) not null,
-grade tinyint unsigned,
-enrolled_date datetime default now(),
-constraint primary key(student_id)
+	student_id varchar(10),
+    student_name varchar(30) not null,
+    major varchar(50),
+    grade tinyint unsigned,
+    enrolled_date date,
+    constraint primary key(student_id)
 );
 select * from students;
 
