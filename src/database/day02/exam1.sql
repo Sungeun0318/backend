@@ -67,20 +67,39 @@ create table test5(
     );
     select * from test4;
     select * from test5;
+    
+    
+-- [5] 회원제 제품 설계
+-- 관례순서
+drop database if exists boardservice6;  -- 이미 존재할 수 있으므로 데이터베이스 삭제
+create database boardservice6; -- 데이터베이스 생성
+use boardservice6; -- 데이터베이스 활성화/사용
 
+create table member( 
+	mno int auto_increment , -- 회원번호 , 정수타입 , 자동번호 부여
+    mid varchar(30) not null unique , -- 회원아이디 , 문자타입(~30) , 빈칸불가능 , 중복불가능
+    mpw varchar(30) not null , -- 회원비밀번호 , 문자타입(~30) , 빈칸불가능
+    mname varchar(10) , -- 회원닉네임 , 문자타입(~10) 
+    mphone char(13) , -- 회원연락처 , 문자타입(13)
+    constraint primary key( mno )  -- 회원번호 를 pk(식별키) 선정 
+);
 
+select * from member;
+    
+create table product(
+	pno int auto_increment,
+    pname varchar(100) not null unique,
+    pprice int unsigned default 0, -- 가격이므로 음수는 필요없어서 unsigned, 초기값 생략시 0
+    pcomment longtext, -- 최대 4G 가능한 문자타입
+    pdate datetime default now(), -- 날짜/시간타입, 기본값을 현재시스템 날짜/시간 자동 부여
+	mno int, -- FK로 사용할 필드명의 타입은 pk 필드명과 일치, 필드/속성 명 일치 권장  -- on delete cascade 회원이 탈퇴하면 그 회원의 제품도 삭제
+    constraint primary key(pno), -- pno속성에 pk 설정
+    constraint foreign key(mno) references member(mno) on delete cascade
+    );
 
+select * from product;
 
-
-
-
-
-
-
-
-
-
-
+-- ER 다이어그램 : 여러 객체들 간의 관계 시각적, ERD 다이어그램 : 데이터베이스 테이블 간의 관계 시각적
 
 
 
