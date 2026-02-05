@@ -1,6 +1,6 @@
 package day10;
 
-public class exam1 {
+public class Exam1 {
     public static void main(String[] args) {
 
         // [1] 인터페이스 정의 : 서로 다른 시스템이나 장치 사이에서 정보를 주고 받는 접점/경계

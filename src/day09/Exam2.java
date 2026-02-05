@@ -1,6 +1,6 @@
 package day09;
 
-public class exam2 {
+public class Exam2 {
     public static void main(String[] args) {
         // [1] 자바의 모든 클래스는 object 클래스로부터 자동 상속받는다.
         System.out.println("=== [1] ===");

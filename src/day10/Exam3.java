@@ -1,6 +1,6 @@
 package day10;
 
-public class exam3 {
+public class Exam3 {
     public static void main(String[] args) {
         // [1] 구현체
         Buy buy = new Customer();

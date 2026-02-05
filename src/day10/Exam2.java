@@ -1,6 +1,6 @@
 package day10;
 
-public class exam2 {
+public class Exam2 {
     public static void main(String[] args) {
 
         // [1] 인터페이스 객체 생성 불가능하다

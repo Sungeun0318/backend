@@ -3,7 +3,7 @@ package day11;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class exam1 {
+public class Exam1 {
     public static void main(String[] args) {
 
         // [1] 예외처리 : 개발자가 구현한 로직이나 사용자의 영향으로 문제

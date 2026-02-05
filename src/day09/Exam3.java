@@ -1,6 +1,6 @@
 package day09;
 
-public class exam3 {
+public class Exam3 {
     public static void main(String[] args) {
 
         // (1) 상위 객체

@@ -1,6 +1,6 @@
 package day09;
 
-public class exam1 {
+public class Exam1 {
     public static void main(String[] args) {
         // [1] 상속 : A클래스로 부터 B클래스에게 (멤버변수/메소드) 물려주는 행위
         // [2] 목적 : 빠른클래스설계, 한번 만들어둔 클래스를 재사용/활용 한다.
