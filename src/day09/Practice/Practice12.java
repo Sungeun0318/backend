@@ -14,7 +14,6 @@ public class Practice12 {
         Student student = new Student();
         student.name = "유재석";
         student.studentId = 123;
-        student.show();
 
 
 /*[문제 2] 메소드 오버라이딩 (Method Overriding)
@@ -26,11 +25,7 @@ public class Practice12 {
 3. main 함수에서 Cat 객체를 생성하고 makeSound() 메소드를 호출하여, 재정의된 내용이 출력되는지 확인하세요.*/
 
         Cat cat = new Cat();
-        cat.makeSound = "고양이가 야옹하고 웁니다";
-        cat.show();
-
-
-
+        cat.makeSound();
 
 
 /*[문제 3] 생성자 호출 순서
@@ -42,7 +37,6 @@ public class Practice12 {
 3. main 함수에서 Computer 객체를 생성할 때, 콘솔에 출력되는 생성자 호출 순서를 확인하세요.*/
 
         Computer computer = new Computer();
-        computer.show();
 
 
 
@@ -54,6 +48,9 @@ public class Practice12 {
 
 3. main 함수에서 Triangle 객체를 생성하여 Figure 타입의 변수에 저장하는 코드를 작성하고, 이것이 가능한 이유를 주석으로 설
 명하세요.*/
+
+        Triangle triangle = new Triangle();
+        Figure figure = new Figure();
 
 
 /*[문제 5] 다형성과 오버라이딩
@@ -133,32 +130,45 @@ class Person{
 
 class Student extends Person{
     int studentId;
-    void show(){
-        System.out.println(name);
-        System.out.println(studentId);
-    }
 }
 
 class Animal{
-    String makeSound = "동물소리를 냅니다.";
-}
-
-class Cat extends Animal{
-    void  show(){
-        System.out.println(makeSound);
+    void makeSound(){
+        System.out.println("동물소리를 냅니다.");
     }
 }
 
+class Cat extends Animal{
+    void makeSound(){
+        System.out.println("고양이가 야옹하고 웁니다.");
+    }
+}
+
+
 class Machine{
-    String a = "부모 클래스 생성자 실행";
-    void  show(){
-        System.out.println(a);
+    Machine(){
+        System.out.println("부모 클래스 생성자 실행");
     }
 }
 
 class Computer extends Machine{
-    String b = "자식 클래스 생성자 실행";
-    void  show(){
-        System.out.println(b);
+    Computer(){
+        System.out.println("자식 클래스 생성자 실행");
+    }
+}
+
+class Figure{
+}
+class Triangle extends Figure{}
+
+class shape{
+    void draw(){
+        System.out.println("도형을 그립니다.");
+    }
+}
+
+class Circle extends shape{
+    void draw(){
+        System.out.println("원을 그립니다.");
     }
 }

@@ -105,6 +105,7 @@ update books set price = price + 2000 where genre = '소설';
 select * from books;
 
 -- [문제 6]books 테이블에서 재고(stock)가 NULL인 도서의 stock 값을 0 으로 수정하세요.
+set SQL_SAFE_UPDATES = 0; -- safe mode 해제
 update books set stock = 0 where stock is null;
 select * from books;
 
