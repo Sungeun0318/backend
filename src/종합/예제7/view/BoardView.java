@@ -2,7 +2,9 @@ package 종합.예제7.view;
 
 
 import 종합.예제7.controller.BoardController;
+import 종합.예제7.model.dto.BoardDto;
 
+import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -31,9 +33,9 @@ public class BoardView {
                 if (ch == 1) {
                     write();
                 } else if (ch == 2) {
-
+                    findAll();
                 } else if (ch == 3) {
-
+                    update();
                 } else if (ch == 4) {
                     delete();
                 } else {
@@ -63,6 +65,7 @@ public class BoardView {
         }
 
     }
+
     // [4] 게시물 삭제 view
     public void delete(){
         System.out.print("삭제할 게시물 번호 : ");
@@ -72,6 +75,29 @@ public class BoardView {
             System.out.println("[안내] 게시물 삭제 완료");
         }else {
             System.out.println("[경고] 게시물 삭제 실패 또는 없는 게시물 번호입니다.");
+        }
+    }
+
+    // [3] 게시물 수정 view
+    public void update(){
+        System.out.print("수정할 게시물 번호 : ");
+        int bno = sc.nextInt();
+        System.out.print("수정할 내용 : ");
+        sc.nextLine();
+        String bcontent = sc.nextLine();
+        boolean result = bc.update(bno, bcontent);
+        if (result) {
+            System.out.println("[안내] 게시물 수정 완료");
+        }else {
+            System.out.println("[경고] 게시물 수정 실패 또는 없는 게시물 번호입니다.");
+        }
+    }
+
+    // [2] 게시물 전체 조회 view
+    public void findAll() {
+        ArrayList<BoardDto> boards = bc.findAll();
+        for (BoardDto board : boards) {
+            System.out.printf("번호 : %d, 작성일 : %d, 작성자 : %s, 내용 : %s\n ", board.getBno(), board.getBdate(), board.getBwriter(), board.getBcontent());
         }
     }
 }// c e
