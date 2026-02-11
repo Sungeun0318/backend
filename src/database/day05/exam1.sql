@@ -46,8 +46,11 @@ select * from tavble1 t1 left join table2 t2 on t1.num_pk = t2.num_fk
 union
 select * from table1 t1 right join table2 t2 on t1.num_pk = t2.num_fk;
 
-
-
+# (5) 차집합 (교집합 제외한 레코드)
+# 왼쪽 테이블의 차집합
+select * from table1 t1 left join table2 t2 on t1.num_pk = t2.num_fk where t2.num_fk is null;
+# 오른쪽 테이블의 차집합
+select t2. * from table1 t1 right join table2 t2 on t1.num_pk = t2.num_fk where t1.num_pk is null;
 
 
 
