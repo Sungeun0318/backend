@@ -34,8 +34,8 @@ public class Exam3 {
 class 계산기{
     int memory; // 멤버변수 // 계산기가 갖는 값
     // 메소드
-    // public void setMemory(int memory) { // 비동기 메소드
-    public synchronized void setMemory(int memory) { // 동기화 메소드
+    // public void setMemory(int memory) { // 비동기 메소드 // Thread-0 결과 : 200 Thread-1 결과 : 200
+    public synchronized void setMemory(int memory) { // 동기화 메소드  // Thread-0 결과 : 100 Thread-1 결과 : 200
         // this란? 현재 메소드를 실행한 격차라는 뜻
         // 멤버변수명과 매개변수명이 같을때 식별됨
         this.memory = memory;
