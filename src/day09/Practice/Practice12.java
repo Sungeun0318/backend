@@ -124,6 +124,7 @@ public class Practice12 {
 
 
 
+
 /*[문제 9] 필드와 메소드의 오버라이딩 차이
 
 1. String name = "상위"; 필드와 method() 메소드("상위 메소드" 출력)를 가진 SuperClass를 만드세요.
@@ -133,6 +134,11 @@ public class Practice12 {
 
 3. SuperClass obj = new SubClass(); 로 객체를 생성한 뒤, obj.name과 obj.method()를 각각 호출했을 때의 결과를 확인
 하고, 왜 다른 결과가 나오는지 주석으로 설명하세요.*/
+
+        SuperClass obj = new SubClass();
+        System.out.println(obj.name);
+        obj.method();
+        // 필드는 타입(SuperClass)에 따라 결정되고, 메소드는 실제 객체(SubClass)의 오버라이딩된 메소드가 실행됩니다.
 
 
 /*[문제 10] 다중 상속 관계
@@ -145,6 +151,10 @@ public class Practice12 {
 
 4. main 함수에서 Laptop 객체를 생성한 뒤, 이 객체가 Electronic 타입과 Device 타입으로도 형 변환이 가능한지 instanceof
 연산자로 확인하고 결과를 출력하세요.*/
+
+        Laptop laptop = new Laptop();
+        System.out.println(laptop instanceof Electronic);
+        System.out.println(laptop instanceof Laptop);
 
 
     }
@@ -252,3 +262,22 @@ class Character {
         weapon.attack();
     }
 }
+
+class SuperClass {
+    String name = "상위";
+    void method() {
+        System.out.println("상위 메소드");
+    }
+}
+
+class SubClass extends SuperClass {
+    String name = "하위";
+    @Override
+    void method() {
+        System.out.println("하위 메소드");
+    }
+}
+
+class Device {}
+class Electronic extends Device {}
+class Laptop extends Electronic {}
