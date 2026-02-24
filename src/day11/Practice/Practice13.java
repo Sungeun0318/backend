@@ -12,6 +12,28 @@ public class Practice13 {
         soungable = dog;
         soungable.makeSound();
 
+        // [2]
+        System.out.println(RemoteControl.MAX_VOLUME);
+        System.out.println(RemoteControl.MIN_VOLUME);
+
+        // [3]
+        Runnable runner;
+
+        runner = new Person();
+        runner.run();
+
+        runner = new Car();
+        runner.run();
+
+        // [4]
+        Character character = new Character();
+        Sword sword = new Sword();
+        Gun gun = new Gun();
+
+        character.useWeapon(sword);
+        character.useWeapon(gun);
+
+
         // [5]
 
         Flyable fly = new Duck();
@@ -19,6 +41,18 @@ public class Practice13 {
 
         fly.fly();
         swimmable.swimmable();
+
+        // [6]
+
+        // [7]
+
+        // [8]
+
+        // [9]
+
+        // [10]
+
+
 
     }
 }
@@ -59,6 +93,11 @@ class Dog implements Soungable{
 3. main 함수에서 객체를 생성하지 않고, RemoteControl.MAX_VOLUME과 같이 인터페이스 이름으로 직접 접근하여 두 상수
 를 출력하세요.*/
 
+interface RemoteControl{
+    public static final int MAX_VOLUME = 10;
+    public static final int MIN_VOLUME = 0;
+}
+
 
 /*[문제 3] 다형성: 인터페이스 타입 변환
 
@@ -70,6 +109,22 @@ class Dog implements Soungable{
 
 4. runner 변수에 new Person()을 대입하여 run() 메소드를 호출하고, 그 다음 new Car()를 대입하여 run() 메소드를 호출하
 여 결과가 다르게 나오는 것을 확인하세요.*/
+
+interface Runnable {
+    public abstract void run();
+}
+
+class Person implements Runnable {
+    public void run(){
+        System.out.println("사람이 달립니다.");
+    }
+}
+
+class Car implements Runnable {
+    public void run(){
+        System.out.println("자동차가 달립니다.");
+    }
+}
 
 
 /*[문제 4] 다형성을 활용한 매개변수
@@ -83,6 +138,24 @@ useWeapon(Attackable weapon) 메소드를 만드세요.
 
 4. main 함수에서 Sword 객체와 Gun 객체를 생성한 뒤, 이 객체들을 Character의 useWeapon() 메소드에 인자로 전달하여
 동작을 확인하세요.*/
+
+interface Attackable{
+    public abstract void attack();
+}
+
+class Sword implements Attackable{
+    public void attack(){}
+};
+
+class Gun implements Attackable{
+    public void attack(){}
+}
+
+class Character{
+    public void useWeapon(Attackable weapon){
+        weapon.attack();
+    }
+}
 
 
 /*[문제 5] 다중 인터페이스 구현

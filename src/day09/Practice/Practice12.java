@@ -66,7 +66,7 @@ public class Practice12 {
 
         Shape shape = new Circle();
         shape.draw();
-        // Circle 클래스 draw() 메소드를 오버라이딩 함!
+
 
 
 /*[문제 6] instanceof와 강제 타입 변환 (Downcasting)
@@ -138,7 +138,7 @@ public class Practice12 {
         SuperClass obj = new SubClass();
         System.out.println(obj.name);
         obj.method();
-        // 필드는 타입(SuperClass)에 따라 결정되고, 메소드는 실제 객체(SubClass)의 오버라이딩된 메소드가 실행됩니다.
+
 
 
 /*[문제 10] 다중 상속 관계
